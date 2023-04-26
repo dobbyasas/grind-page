@@ -1,4 +1,4 @@
-import quotes from "../../banners/quotes.json";
+import quotes from '../../banners/quotes.json';
 import React, { useState, useEffect } from "react";
 
 
