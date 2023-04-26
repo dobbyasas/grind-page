@@ -1,22 +1,72 @@
 import React from 'react';
 import './Counter.css';
+import ToDoList from './to_do_list/ToDoList';
 
 function Counter() {
   return (
     <div className="container">
-    <div className="column column-1">
-      <h1>GUITAR</h1>
+
+        <div className="column column-1">
+            <h1>LIFE</h1>
+            <div className="row-container">
+                <div className="row">
+                    {/* Add content for the first row here */}
+                </div>
+                <div className="row">
+                    <ToDoList />
+                </div>
+            </div>
+        </div>
+
+        <div className="column column-2">
+            <h1>REACT</h1>
+            <div className="row-container">
+                <div className="row">
+                    {/* Add content for the first row here */}
+                </div>
+                <div className="row">
+                    <ToDoList />
+                </div>
+            </div>
+        </div>
+
+        <div className="column column-3">
+            <h1>UNITY</h1>
+            <div className="row-container">
+                <div className="row">
+                    {/* Add content for the first row here */}
+                </div>
+                <div className="row">
+                    <ToDoList />
+                </div>
+            </div>
+        </div>
+
+        <div className="column column-4">
+            <h1>GUITAR</h1>
+            <div className="row-container">
+                <div className="row">
+                    {/* Add content for the first row here */}
+                </div>
+                <div className="row">
+                    <ToDoList />
+                </div>
+            </div>
+        </div>
+
+        <div className="column column-5">
+            <h1>ABLETON</h1>
+            <div className="row-container">
+                <div className="row">
+                    {/* Add content for the first row here */}
+                </div>
+                <div className="row">
+                    <ToDoList />
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div className="column column-2">
-      <h1>REACT</h1>
-    </div>
-    <div className="column column-3">
-      <h1>UNITY</h1>
-    </div>
-    <div className="column column-4">
-        {/* Add content for column 4 here */}
-      </div>
-  </div>
   );
 }
 
