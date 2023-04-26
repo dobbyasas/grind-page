@@ -44,15 +44,7 @@ const QuotesEditor = () => {
 
   return (
     <div>
-      <h2>Quotes</h2>
-      <ul>
-        {quotes.map((quote) => (
-          <li key={quote.id}>
-            "{quote.quote}" - {quote.author}
-            <button onClick={() => handleDelete(quote.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      
       <h2>Add Quote</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -65,6 +57,17 @@ const QuotesEditor = () => {
         </label>
         <input type="submit" value="Add Quote" />
       </form>
+      <h2>Quotes:</h2> 
+      
+      <ul>
+        {quotes.map((quote) => (
+          <li key={quote.id}>
+            "{quote.quote}" - {quote.author}
+            <button onClick={() => handleDelete(quote.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+      <div className="bottomButton"><a href={`/`}><button>HOME</button></a></div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import './Home.css';
 
 function Home() {
     const [quotes, setQuotes] = useState([]);
@@ -27,9 +27,10 @@ function Home() {
       <div className="wrapper">
         <div id='quotes'>
           <h2>{quote}</h2>
-          <a href={`Editor`}><button>EDITOR</button></a>
+          
         </div>
       </div>
+      <div className="bottomButton"><a href={`Editor`}><button>EDITOR</button></a></div>
     </div>
   );
 }
