@@ -1,4 +1,3 @@
-import quotes from '../../banners/quotes.json';
 import React, { useState, useEffect } from "react";
 
 const QuotesEditor = () => {
@@ -14,36 +13,27 @@ const QuotesEditor = () => {
     
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newQuotes = [...quotes, { quote: newQuote, autor: newAuthor }];
-    setQuotes(newQuotes);
-    setNewQuote('');
-    setNewAuthor('');
-    saveToFile(newQuotes);
-  };
-
-  const saveToFile = async (newQuotes) => {
-    const response = await fetch('api/saveQuotes', {
-      method: 'POST',
+    const quoteObject = { quote: newQuote, author: newAuthor };
+    fetch('http://localhost:3001/quote', {
+      method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ quotes: newQuotes }),
-    });
-  
-    if (!response.ok) {
-      console.error('Failed to save quotes');
-    }
+      body: JSON.stringify(quoteObject),
+    })
+      .then(() => {
+        console.log(quoteObject);
+        setQuotes([...quotes, quoteObject]);
+      })
+      .catch((err) => console.error(err));
   };
-  
+
 
   useEffect(() => {
-    const storedQuotes = localStorage.getItem('quotes');
-    if (storedQuotes) {
-      setQuotes(JSON.parse(storedQuotes));
-    } else {
-      setQuotes(quotesData.quotes); 
-      localStorage.setItem('quotes', JSON.stringify(quotesData.quotes));
-    }
+    fetch('http://localhost:3001/quote')
+      .then((res) => res.json())
+      .then((data) => setQuotes(data))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -52,7 +42,7 @@ const QuotesEditor = () => {
       <ul>
         {quotes.map((quote, index) => (
           <li key={index}>
-            "{quote.quote}" - {quote.autor}
+            "{quote.quote}" - {quote.author}
             <button onClick={() => handleDelete(index)}>Delete</button>
           </li>
         ))}
