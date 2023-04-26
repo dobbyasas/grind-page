@@ -10,7 +10,7 @@ p{
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-image: url("../public/img/wallpaperflare.com_wallpaper.jpg");
+  background-image: url("../src/assets/img/wallpaperflare.com_wallpaper.jpg");
   background-position: center;
   background-size: cover;
 }

@@ -12,16 +12,6 @@ function Home() {
 
     return (
       <div id="main">
-        {/*
-            <nav className="tabs">
-        <div className="selector"></div>
-        <a href="#" className="active"><i className="fab fa-superpowers"></i>HOME</a>
-        <a href="#">Story</a>
-        <a href="#">Music</a>
-        <a href="#">Gallery</a>
-      </nav>
-        */}
-
       <div className="wrapper">
         <div id='quotes'>
           <h2>{quote}</h2>

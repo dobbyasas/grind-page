@@ -1,12 +1,12 @@
-import quotes from "../../banners/quotes.json";
-import React, { useState, useEffect } from "react";
-
+import React from 'react';
+import QuotesEditor from './QuotesEditor';
 
 function Editor() {
-    return(
-        <div>
-            <p>you are in editor</p>
-        </div>
+  return (
+    <div>
+      <h1>Quotes Editor</h1>
+      <QuotesEditor />
+    </div>
   );
 }
 
