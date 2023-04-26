@@ -1,8 +1,24 @@
 {
   "quotes": [
     {
-      "quote": "asa",
-      "author": "aaa"
+      "id": 0,
+      "quote": "Man im so drunk...",
+      "author": "Lebowski"
+    },
+    {
+      "id": 1,
+      "quote": "You can close your eyes to the things you don't want to see, but you can't close your heart to the things you don't want to feel.",
+      "author": "Chester Bennington"
+    },
+    {
+      "id": 2,
+      "quote": "Let the grind begin!",
+      "author": "Tofi Novak"
+    },
+    {
+      "id": 3,
+      "quote": "That's life.",
+      "author": "unknown"
     }
   ]
 }

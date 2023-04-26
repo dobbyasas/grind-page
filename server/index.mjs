@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import { getQuotesFromFile, addQuoteToFile, setupDataDirectory } from './utils/data.mjs';
+import { getQuotesFromFile, addQuoteToFile, deleteQuoteFromFile, setupDataDirectory } from './utils/data.mjs';
 
 // Setup
 const app = express();
@@ -35,13 +35,24 @@ app.get('/quote', (_, res) => {
 app.post('/quote', (req, res) => {
   try {
     const { quote, author } = req.body;
-    addQuoteToFile({
+    const newQuote = addQuoteToFile({
       quote,
       author,
     });
+    return res.json(newQuote);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json('Server error!');
+  }
+});
+
+// DELETE Endpoint for Quotes
+app.delete('/quote/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    deleteQuoteFromFile(id);
     return res.json({
-      quote,
-      author,
+      id,
     });
   } catch (error) {
     console.log(error);

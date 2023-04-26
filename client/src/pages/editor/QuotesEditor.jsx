@@ -5,10 +5,17 @@ const QuotesEditor = () => {
   const [newQuote, setNewQuote] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
 
-  const handleDelete = (index) => {
-    const newQuotes = quotes.filter((_, i) => i !== index);
-    setQuotes(newQuotes);
-    saveToFile(newQuotes);
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3001/quote/${id}`, {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        res.json().then((data) => setQuotes(quotes.filter((quote) => quote.id !== Number(data.id))));
+      })
+      .catch((err) => console.error(err));
   };
     
   const handleSubmit = (e) => {
@@ -21,9 +28,8 @@ const QuotesEditor = () => {
       },
       body: JSON.stringify(quoteObject),
     })
-      .then(() => {
-        console.log(quoteObject);
-        setQuotes([...quotes, quoteObject]);
+      .then((res) => {
+        res.json().then((data) => setQuotes([...quotes, data]));
       })
       .catch((err) => console.error(err));
   };
@@ -40,10 +46,10 @@ const QuotesEditor = () => {
     <div>
       <h2>Quotes</h2>
       <ul>
-        {quotes.map((quote, index) => (
-          <li key={index}>
+        {quotes.map((quote) => (
+          <li key={quote.id}>
             "{quote.quote}" - {quote.author}
-            <button onClick={() => handleDelete(index)}>Delete</button>
+            <button onClick={() => handleDelete(quote.id)}>Delete</button>
           </li>
         ))}
       </ul>
