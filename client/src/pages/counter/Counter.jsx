@@ -1,6 +1,7 @@
 import React from 'react';
 import './Counter.css';
 import ToDoList from './to_do_list/ToDoList';
+import Stopwatch from './stopwatch/Stopwatch';
 
 function Counter() {
 
@@ -15,7 +16,7 @@ function Counter() {
             <h1>LIFE</h1>
             <div className="row-container">
                 <div className="row">
-                    {/* Add content for the first row here */}
+                    <Stopwatch />
                 </div>
                 <div className="row">
                     <ToDoList />

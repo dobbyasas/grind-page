@@ -1380,6 +1380,11 @@
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   "version" "2.0.0"
 
+"jquery@^3.6.4":
+  "integrity" "sha512-v28EW9DWDFpzcD9O5iyJXg3R3+q+mET5JhnjJzQUZMHOv67bpSIHq81GEYpPNZHG+XXHsfSme3nxp/hndKEcsQ=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.4.tgz"
+  "version" "3.6.4"
+
 "js-sdsl@^4.1.4":
   "integrity" "sha512-FfVSdx6pJ41Oa+CF7RDaFmTnCaFhua+SNYQX74riGOpl96x+2jQCqEfQ2bnXu/5DPCqlRuiqyvTJM0Qjz26IVg=="
   "resolved" "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.4.0.tgz"
