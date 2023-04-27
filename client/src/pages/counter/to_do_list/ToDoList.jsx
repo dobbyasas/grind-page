@@ -25,30 +25,30 @@ function TodoList() {
   };
 
   return (
-    <div className="todo-list">
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Add a task..."
-      />
-      <button onClick={addTask}>Add Task</button>
-      <ul>
-        {tasks.map((task, index) => (
-          <li
-            key={index}
-            onClick={() => toggleTaskCompletion(index)}
-            className={task.completed ? 'completed' : ''}
-          >
-            {task.text}
-            <button onClick={(e) => {
-              e.stopPropagation();
-              deleteTask(index);
-            }}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="todo-list">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Add a task..."
+        />
+        <button onClick={addTask}>Add Task</button>
+        <ul>
+          {tasks.map((task, index) => (
+            <li
+              key={index}
+              onClick={() => toggleTaskCompletion(index)}
+              className={task.completed ? 'completed' : ''}
+            >
+              {task.text}
+              <button onClick={(e) => {
+                e.stopPropagation();
+                deleteTask(index);
+              }}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
   );
 }
 

@@ -3,6 +3,11 @@ import './Counter.css';
 import ToDoList from './to_do_list/ToDoList';
 
 function Counter() {
+
+    const toggleMenu = () => {
+        setShown(!shown);
+      };
+
   return (
     <div className="container">
 
