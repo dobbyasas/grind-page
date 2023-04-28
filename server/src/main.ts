@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+import quoteRouter from './routes/quote';
+import taskRouter from './routes/task';
+
 import { DEFAULT_EXPRESS_PORT } from './utils/constants';
 
 // Setup
@@ -17,6 +20,10 @@ export const TASK_FILE = 'tasks.json';
 
 // Ports
 const expressPort = Number(process.env.EXPRESS_PORT) || DEFAULT_EXPRESS_PORT;
+
+// Routes
+app.use('/quote', quoteRouter);
+app.use('/task', taskRouter);
 
 // Express Server
 app.listen(expressPort, () => {
