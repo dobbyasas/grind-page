@@ -1,12 +1,22 @@
 import * as fs from 'fs';
 
-import { DATA_DIRECTORY, QUOTE_FILE } from '../index.mjs';
+import { DATA_DIRECTORY, QUOTE_FILE, TASK_FILE } from '../index.mjs';
 
 export const setupDataDirectory = () => {
   if (!fs.existsSync(DATA_DIRECTORY)) fs.mkdirSync(DATA_DIRECTORY);
   if (!fs.existsSync(`${DATA_DIRECTORY}/${QUOTE_FILE}`)) {
     fs.writeFileSync(`${DATA_DIRECTORY}/${QUOTE_FILE}`, '{"quotes":[]}');
   }
+  if (!fs.existsSync(`${DATA_DIRECTORY}/${TASK_FILE}`)) {
+    fs.writeFileSync(`${DATA_DIRECTORY}/${TASK_FILE}`, '{"tasks":[]}');
+  }
+};
+
+export const getDataFromFile = (type) => {
+  // Reading the target file
+  const content = fs.readFileSync(`${DATA_DIRECTORY}/${type}.json`);
+  const parsedContent = JSON.parse(content.toString()).quotes;
+  return parsedContent;
 };
 
 export const getQuotesFromFile = () => {
