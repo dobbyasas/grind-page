@@ -5,6 +5,9 @@ import {
   addQuoteToFile,
   deleteQuoteFromFile,
 } from '../utils/data';
+import { getServerError } from '../utils/error';
+
+import { CREATED_CODE, SERVER_ERROR_CODE } from '../utils/constants';
 
 const quoteRouter = Router();
 
@@ -15,7 +18,7 @@ quoteRouter.get('/', (_, res) => {
     return res.json(quotes);
   } catch (error) {
     console.log(error);
-    return res.status(500).json([]);
+    return res.status(500).json();
   }
 });
 
@@ -27,10 +30,10 @@ quoteRouter.post('/', (req, res) => {
       quote,
       author,
     });
-    return res.json(newQuote);
+    return res.status(CREATED_CODE).json(newQuote);
   } catch (error) {
     console.log(error);
-    return res.status(500).json('Server error!');
+    return res.status(SERVER_ERROR_CODE).json('Server error!');
   }
 });
 
@@ -44,7 +47,7 @@ quoteRouter.delete('/:id', (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json('Server error!');
+    return res.status(SERVER_ERROR_CODE).json(getServerError());
   }
 });
 
