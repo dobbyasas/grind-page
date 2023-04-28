@@ -2,7 +2,11 @@
 
 .wrapper {
   position: relative;
-  height: 12em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown-container {
@@ -10,12 +14,11 @@
   -webkit-font-smoothing: antialiased;
   width: 100%;
   height: 100%;
-  position: absolute    ;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
 }
 
 .countdown {
@@ -34,10 +37,10 @@
 .number, .separator {
   display: block;
   color: #333;
-  height: 10rem;
-  font-size: 10rem;
+  height: 5rem; /* Updated height */
+  font-size: 5rem; /* Updated font size */
   position: relative;
-  line-height: 10rem;
+  line-height: 5rem; /* Updated line height */
   text-align: center;
   width: 100%;
 }
@@ -58,6 +61,12 @@
   width: 100%;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .new {
   animation: show-new 0.4s cubic-bezier(0, 0.9, 0.5, 1.2) forwards;
 }
@@ -68,6 +77,18 @@
 
 .countdown section {
   position: relative;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+button {
+  margin: 0 0.5rem;
 }
 
 #js-days:after, #js-hours:after, #js-minutes:after, #js-seconds:after {
