@@ -18,7 +18,7 @@ function Counter() {
                 <div className="row">
                     <Stopwatch />
                 </div>
-                <div className="row">
+                <div className="row"> 
                     <ToDoList />
                 </div>
             </div>
