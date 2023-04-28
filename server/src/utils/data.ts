@@ -32,16 +32,24 @@ export const addQuoteToFile = (quoteInfo: Omit<IQuote, 'id'>) => {
   // Reading the quotes file
   const quotesContent = fs.readFileSync(`${DATA_DIRECTORY}/${QUOTE_FILE}`);
   const existingQuotes = JSON.parse(quotesContent.toString()).quotes;
-  const maxQuoteId = Math.max(...existingQuotes.map((quote: IQuote) => quote.id));
+  const maxQuoteId = Math.max(
+    ...existingQuotes.map((quote: IQuote) => quote.id)
+  );
 
   // Adding the new quote
   const newQuotesContent = {
-    quotes: [...existingQuotes, {
-      id: maxQuoteId + 1,
-      ...quoteInfo,
-    }],
+    quotes: [
+      ...existingQuotes,
+      {
+        id: maxQuoteId + 1,
+        ...quoteInfo,
+      },
+    ],
   };
-  fs.writeFileSync(`${DATA_DIRECTORY}/${QUOTE_FILE}`, JSON.stringify(newQuotesContent, null, 2));
+  fs.writeFileSync(
+    `${DATA_DIRECTORY}/${QUOTE_FILE}`,
+    JSON.stringify(newQuotesContent, null, 2)
+  );
   return {
     id: maxQuoteId + 1,
     ...quoteInfo,
@@ -57,5 +65,8 @@ export const deleteQuoteFromFile = (id: IQuote['id']) => {
   const newQuotesContent = {
     quotes: existingQuotes.filter((quote: IQuote) => quote.id !== id),
   };
-  fs.writeFileSync(`${DATA_DIRECTORY}/${QUOTE_FILE}`, JSON.stringify(newQuotesContent, null, 2));
+  fs.writeFileSync(
+    `${DATA_DIRECTORY}/${QUOTE_FILE}`,
+    JSON.stringify(newQuotesContent, null, 2)
+  );
 };

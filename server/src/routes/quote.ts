@@ -1,6 +1,10 @@
 import { Router } from 'express';
 
-import { getDataFromFile, addQuoteToFile, deleteQuoteFromFile } from '../utils/data';
+import {
+  getDataFromFile,
+  addQuoteToFile,
+  deleteQuoteFromFile,
+} from '../utils/data';
 
 const quoteRouter = Router();
 
