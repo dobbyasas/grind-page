@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getDataFromFile } from '../utils/data.mjs';
+import { getDataFromFile, addQuoteToFile, deleteQuoteFromFile } from '../utils/data';
 
 const quoteRouter = Router();
 
@@ -34,7 +34,7 @@ quoteRouter.post('/', (req, res) => {
 quoteRouter.delete('/:id', (req, res) => {
   try {
     const { id } = req.params;
-    deleteQuoteFromFile(id);
+    deleteQuoteFromFile(Number(id));
     return res.json({
       id,
     });
