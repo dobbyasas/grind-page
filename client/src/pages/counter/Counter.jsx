@@ -16,11 +16,9 @@ function Counter() {
             <h1>LIFE</h1>
             <div className="row-container">
                 <div className="row">
-
-                        <div class="countdown-container">
-                            <Stopwatch />
-                        </div>
-                        
+                    <div class="countdown-container">
+                        <Stopwatch />
+                    </div>
                 </div>
                 <div className="row"> 
                     <ToDoList />
@@ -32,7 +30,9 @@ function Counter() {
             <h1>REACT</h1>
             <div className="row-container">
                 <div className="row">
-                    {/* Add content for the first row here */}
+                <div class="countdown-container">
+                        <Stopwatch />
+                    </div>
                 </div>
                 <div className="row">
                     <ToDoList />
@@ -44,7 +44,9 @@ function Counter() {
             <h1>UNITY</h1>
             <div className="row-container">
                 <div className="row">
-                    {/* Add content for the first row here */}
+                    <div class="countdown-container">
+                        <Stopwatch />
+                    </div>
                 </div>
                 <div className="row">
                     <ToDoList />
@@ -56,7 +58,9 @@ function Counter() {
             <h1>GUITAR</h1>
             <div className="row-container">
                 <div className="row">
-                    {/* Add content for the first row here */}
+                    <div class="countdown-container">   
+                        <Stopwatch />
+                    </div>
                 </div>
                 <div className="row">
                     <ToDoList />
@@ -68,7 +72,9 @@ function Counter() {
             <h1>ABLETON</h1>
             <div className="row-container">
                 <div className="row">
-                    {/* Add content for the first row here */}
+                    <div class="countdown-container">
+                        <Stopwatch />
+                    </div>
                 </div>
                 <div className="row">
                     <ToDoList />

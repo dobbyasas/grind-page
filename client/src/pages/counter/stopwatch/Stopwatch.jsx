@@ -71,6 +71,16 @@ function Stopwatch() {
     }
     setIsRunning(!isRunning);
   };
+
+  const resetCounting = () => {
+    if (window.confirm('Are you sure you want to reset the stopwatch?')) {
+      pauseCounting();
+      setDays(0);
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+    }
+  };
   
   return (
     <section className="wrapper">
@@ -88,6 +98,7 @@ function Stopwatch() {
       <div className="button-wrapper">
         <section className="buttons-container">
           <button onClick={toggleCounting}>{isRunning ? 'Pause' : 'Start'}</button>
+          <button onClick={resetCounting}>Reset</button>
         </section>
       </div>
     </section>
