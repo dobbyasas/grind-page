@@ -16,7 +16,11 @@ function Counter() {
             <h1>LIFE</h1>
             <div className="row-container">
                 <div className="row">
-                    <Stopwatch />
+                    
+                        <h1>BRIGHTASFFD</h1>
+                        <Stopwatch />
+                   
+
                 </div>
                 <div className="row"> 
                     <ToDoList />
