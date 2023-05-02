@@ -52,7 +52,9 @@
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.05);
     padding: 10px;
-    overflow: hidden; /* Add this line */
+    display: flex; /* Added */
+    justify-content: center; /* Added */
+    align-items: center; /* Added */
   }
 
   .milujukajuavecerjiudelamorgasmus {
@@ -62,4 +64,15 @@
     padding: 0px;
     place-items: center;
   }
+
+  .countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  
+
   

@@ -12,15 +12,16 @@
 .countdown-container {
   font-family: Montserrat, sans-serif;
   -webkit-font-smoothing: antialiased;
-  width: 100%; /* Adjust this to fit within the .row div */
-  height: 100%; /* Adjust this to fit within the .row div */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -5%; /* Adjust this value as needed to move the stopwatch left */
+  top: -2%; /* Adjust this value as needed to move the stopwatch up */
 }
-
 
 .countdown {
   display: flex;
@@ -39,10 +40,10 @@
 .number, .separator {
   display: block;
   color: #333;
-  height: 5rem; /* Updated height */
-  font-size: 5rem; /* Updated font size */
+  height: 3rem; /* Updated height */
+  font-size: 3rem; /* Updated font size */
   position: relative;
-  line-height: 5rem; /* Updated line height */
+  line-height: 3rem; /* Updated line height */
   text-align: center;
   width: 100%;
 }
@@ -93,14 +94,28 @@ button {
   margin: 0 0.5rem;
 }
 
+.button-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
 #js-days:after, #js-hours:after, #js-minutes:after, #js-seconds:after {
   content: "DAYS";
   position: absolute;
   text-align: center;
   left: 0;
   right: 0;
-  bottom: -80px;
-  font-size: 12px;
+  bottom: -40px;
+  font-size: 6px;
 }
 #js-hours:after {
   content: "HOURS";

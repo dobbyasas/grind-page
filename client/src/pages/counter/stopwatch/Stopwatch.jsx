@@ -85,9 +85,11 @@ function Stopwatch() {
           <section id="js-seconds" className="number">{pad(seconds)}</section>
         </article>
       </section>
-      <section className="buttons-container">
-        <button onClick={toggleCounting}>{isRunning ? 'Pause' : 'Start'}</button>
-      </section>
+      <div className="button-wrapper">
+        <section className="buttons-container">
+          <button onClick={toggleCounting}>{isRunning ? 'Pause' : 'Start'}</button>
+        </section>
+      </div>
     </section>
   );
   
