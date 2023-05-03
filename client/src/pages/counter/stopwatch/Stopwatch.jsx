@@ -103,7 +103,6 @@ function Stopwatch() {
       </div>
     </section>
   );
-  
 }
 
 export default Stopwatch;
